@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BzStudentInfo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+<div class="header">
+<img src="images/student.jpg" alt="StudentLogo" width="84" height="122" align="left">
+<hr>
+  <h1>BzStudentInfo</h1>
+
+  <p>Information about student test scores in Belize</p>
+  <hr>
+  
+</div>
+
+<div class="topnav">
+  <a href="#">About Application</a>
+  <a href="#">About Course</a>
+  <a href="#">About Me</a>
+</div>
+<div class="row">
+
+  <div class="column">
+    <h2>Belize Districts</h2>
+   <h3></h3>
+   <img id="belizeImage" src="images/belizedistrict.png" alt="Districts" width="143" height="208" align="right">
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/belizedistrict.png'">Belize</button></p>
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/cayodistrict.jpg'">Cayo</button></p>
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/corozaldistrict.jpg'">Corozal</button></p>
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/orangewalkdistrict.png'">Orange Walk</button></p>
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/stanncreekdistrict.jpg'">Stann Creek</button></p>
+<p><button style="width: 100px; height: 20px;" onclick="document.getElementById('belizeImage').src='images/toledodistrict.png'">Toledo</button></p>
+
+  </div>
+
+
+  <div class="column">
+    <h2></h2>
+   <h2>PSE SCORES</h2>
+   <center>
+<% if(results.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">DISTRICT</th>
+                    <th scope="col">PSE AVERAGE</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+             <% results.forEach(function(r) { %>
+                <tr>
+				
+                    <th scope="row"></th>
+                   <td><%= r.district %></td>
+                    <td><center><%= r.avg %><center></td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+        <% } %>
+
+        <!-- if result is empty -->
+        <% if(!results.length) { %>
+            <p class="text-center">No record found!</p>
+        <% } %>
+    </center>
+  </div>
+  
+  <div class="column">
+    <h2></h2>
+   <h2>Criteria</h2>
+   
+
+<p><a href="/funding">Funding</a></p>
+<p><a href="/municipality">Municipality</a></p>
+<p><a href="/ur">Urban/Rural</a></p>
+<p><a href="/management">Management</a></p>
+<p><a href="/school">School</a></p>
+
+  </div>
+  
+
+
+</div>
+
+<div class="footer">
+  <p><a href="https://ub.edu.bz">Powered by UB </a></p>
+</div>
+
+
+</body>
+</html>

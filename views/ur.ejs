@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FUNDING</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container" style="margin-top: 50px;">
+
+  
+
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">PSE SCHOOL RANKING - BY URBAN/RURAL</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/">Back to Home</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+
+       <% if(results.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">URBAN/RURAL</th>
+                    <th scope="col">PSE AVERAGE</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+             <% results.forEach(function(r) { %>
+                <tr>
+				
+                    <th scope="row"></th>
+                   <td><%= r.urbanrural %></td>
+                    <td><%= r.avg %></td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+        <% } %>
+
+        <!-- if result is empty -->
+        <% if(!results.length) { %>
+            <p class="text-center">No record found!</p>
+        <% } %>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">PSE RANKING BY SCHOOL - BY URBAN/RURAL</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/">Back to Home</a>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>
